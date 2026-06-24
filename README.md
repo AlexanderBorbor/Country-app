@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CountryApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.2.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Country-app
+Problemas con el country
+>>>>>>> ae55f5d3f3f2fa08fab8c9feeb78125a3b016db9
