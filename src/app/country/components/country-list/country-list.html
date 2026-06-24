@@ -1,0 +1,27 @@
+<section class="mt-5">
+  <table class="table table-md mt-2 w-full">
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>icono</th>
+        <th>Bandera</th>
+        <th>Nombre</th>
+        <th>Capital</th>
+        <th>Poblacion</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (country of countries(); track country.uuid; let idx = $index) {
+      <tr>
+        <td>{{idx + 1}}</td>
+        <td>{{country.flag}}</td>
+        <td>
+          <img [src]="country.flag.url_svg" [alt]="country.names.common">
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</section>
