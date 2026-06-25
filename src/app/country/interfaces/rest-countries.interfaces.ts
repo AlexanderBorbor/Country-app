@@ -1,9 +1,9 @@
-export interface RESTCountries {
+export interface RESTcountries {
   data: Data;
 }
 
 export interface Data {
-  objects: Country[];
+  objects: Object[];
   meta:    Meta;
 }
 
@@ -17,7 +17,7 @@ export interface Meta {
   duration:   number;
 }
 
-export interface Country {
+export interface Object {
   names:           Names;
   codes:           Codes;
   capitals:        Capital[];

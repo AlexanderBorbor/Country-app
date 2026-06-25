@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { CountrySearchComponent } from "../../components/country-search/country-search";
 import { CountryListComponent } from "../../components/country-list/country-list";
 import { CountryService } from '../../services/country';
-import { Country } from '../../interfaces/rest-countries.interfaces';
+import {  RESTcountries } from '../../interfaces/rest-countries.interfaces';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -18,7 +18,7 @@ import { Country } from '../../interfaces/rest-countries.interfaces';
     isError = signal<String|null>(null);
 
     //Aqui almacena la arrya de objetos
-    countries = signal<Country[]>([])
+    countries = signal<RESTcountries[]>([])
 
       onSearch(query: string) {
         if(this.isLoading()) return;
@@ -26,11 +26,11 @@ import { Country } from '../../interfaces/rest-countries.interfaces';
         this.isLoading.set(true);
         this.isError.set(null)
 
-        this.countryService.searchByCapital(query).subscribe( countries => {
+        this.countryService.searchByCapital(query).subscribe( resp => {
 
           this.isLoading.set(false);
-          this.countries.set(countries)
-          console.log(countries);
+          this.countries.set(resp)
+          console.log(resp);
         })
     }
   }
