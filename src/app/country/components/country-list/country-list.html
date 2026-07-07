@@ -13,13 +13,20 @@
     </thead>
 
     <tbody>
-      <!--Problema del for-->
-      @for (country of countries(); track country.data.objects; let idx = $index) {
+      @for (country of countries(); track country.uuid; let idx = $index) {
       <tr>
         <td>{{idx + 1}}</td>
-        <td></td>
+        <td>{{ country.flagEmoji }}</td>
         <td>
-          <img [src]="" [alt]="">
+          <img [src]="country.flagUrl" [alt]="country.nameCommmon" class="w-10">
+        </td>
+        <td>{{country.nameCommmon}}</td>
+        <td>{{country.capitalName}}</td>
+        <td>
+          <span class="badge badge-secondary">{{country.population | number}}</span>
+        </td>
+        <td>
+          <a class="link-primary cursor-pointer">Mas informacion</a>
         </td>
       </tr>
       }
